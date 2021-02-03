@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+python-telegram-bot = "*"
+flask = "*"
+requests = "*"
 
 [dev-packages]
 
