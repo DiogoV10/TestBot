@@ -13,6 +13,10 @@ bot = telegram.Bot(token=TOKEN)
 
 app = Flask(__name__)
 
+def echo(update, context):
+    """Echo the user message."""
+    update.message.reply_text(update.message.text)
+
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 def respond():
    # retrieve the message in JSON and then transform it to Telegram object
@@ -34,7 +38,7 @@ def respond():
        # send the welcoming message
        bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
    elif text == "/photo":
-        try:
+       try:
             # clear the message we got from any non alphabets
             text = re.sub(r"\W", "_", text)
             # create the api link for the avatar based on http://avatars.adorable.io/
@@ -48,7 +52,7 @@ def respond():
         return 'ok'
 
    elif text == "/echo" :
-            update.message.reply_text(update.message.text)
+        dp.add_handler(MessageHandler(Filters.text, echo))
            
    
 
