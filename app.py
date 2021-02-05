@@ -29,7 +29,6 @@ def respond():
    
    
        while text != "/stop":
-         bot.sendPhoto(chat_id=chat_id, reply_to_message_id=msg_id)
          try:
             # clear the message we got from any non alphabets
             text = re.sub(r"\W", "_", text)
