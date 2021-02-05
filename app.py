@@ -31,7 +31,7 @@ def respond():
        """
        # send the welcoming message
        bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
-       bot.sendMessage(chat_id)
+       
 
    else:
        try:
@@ -47,7 +47,7 @@ def respond():
            bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
 
    return 'ok'
-
+bot.sendMessage(chat_id)
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
    s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
