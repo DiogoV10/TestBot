@@ -12,9 +12,6 @@ bot = telegram.Bot(token=TOKEN)
 app = Flask(__name__)
 
 @app.route('/{}'.format(TOKEN), methods=['POST'])
-def echo(update, context):
-    """Echo the user message."""
-    update.message.reply_text(update.message.text)
 
 def respond():
    # retrieve the message in JSON and then transform it to Telegram object
@@ -66,5 +63,4 @@ def index():
 
 
 if __name__ == '__main__':
-   dp.add_handler(MessageHandler(Filters.text, echo))
    app.run(threaded=True)
