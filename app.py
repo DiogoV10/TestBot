@@ -27,7 +27,7 @@ def respond():
    # for debugging purposes only
    print("got text message :", text)
    
-   if text == "/photo":
+   
        while text != "/stop":
          bot.sendPhoto(chat_id=chat_id, reply_to_message_id=msg_id)
          try:
@@ -43,7 +43,7 @@ def respond():
             bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
          return 'ok'
 
-   elif text == "/echo" :
+   if text == "/echo" :
        while text != "/stop":
          update.message.reply_text(update.message.text)
            
