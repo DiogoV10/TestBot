@@ -33,7 +33,7 @@ def respond():
        """
        # send the welcoming message
        bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
-       if text == "/photo":
+   elif text == "/photo":
         try:
             # clear the message we got from any non alphabets
             text = re.sub(r"\W", "_", text)
@@ -47,7 +47,7 @@ def respond():
             bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
         return 'ok'
 
-       elif text == "/echo" :
+   elif text == "/echo" :
             update.message.reply_text(update.message.text)
            
    
