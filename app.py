@@ -29,7 +29,6 @@ def respond():
    
    
        while text != "/stop":
-         try:
             # clear the message we got from any non alphabets
             text = re.sub(r"\W", "_", text)
             # create the api link for the avatar based on http://avatars.adorable.io/
@@ -37,10 +36,6 @@ def respond():
             # reply with a photo to the name the user sent,
             # note that you can send photos by url and telegram will fetch it for you
             bot.sendPhoto(chat_id=chat_id, photo=url, reply_to_message_id=msg_id)
-         except Exception:
-            # if things went wrong
-            bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
-         return 'ok'
 
    if text == "/echo" :
        while text != "/stop":
