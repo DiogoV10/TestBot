@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 
-def echo(update, context):
+def echo():
     """Echo the user message."""
     update.message.reply_text(update.message.text)
 
