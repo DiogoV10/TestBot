@@ -33,7 +33,7 @@ def respond():
        """
        # send the welcoming message
        bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
-     if text == "/photo":
+       if text == "/photo":
         try:
             # clear the message we got from any non alphabets
             text = re.sub(r"\W", "_", text)
