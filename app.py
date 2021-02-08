@@ -2,7 +2,6 @@ import re
 from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
-import telebot
 
 
 global bot
@@ -12,10 +11,6 @@ bot = telegram.Bot(token=TOKEN)
 
 app = Flask(__name__)
 
-@bot.message_handler(commands=['eco'])
-
-def test(message):
-    bot.sendMessage(chat_id=chat_id, text=text, reply_to_message_id=msg_id)
 
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 
@@ -45,7 +40,8 @@ def respond():
            # clear the message we got from any non alphabets
            text = re.sub(r"\W", "_", text)
 
-          
+          def test(message):
+            bot.sendMessage(chat_id=chat_id, text=text, reply_to_message_id=msg_id)
            
        except Exception:
            # if things went wrong
