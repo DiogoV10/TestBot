@@ -41,6 +41,8 @@ def respond():
 
            if command.startswith("/echo "):
                 text = text[5:]
+                bot.sendMessage(chat_id=chat_id, text=text) 
+
        except Exception:
            # if things went wrong
            bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
