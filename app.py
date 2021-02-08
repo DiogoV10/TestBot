@@ -40,6 +40,8 @@ def respond():
                 user = text[6:]
                 bot.sendMessage(chat_id=chat_id, text=user) 
                 
+           # clear the message we got from any non alphabets
+           text = re.sub(r"\W", "_", text)
 
        except Exception:
            # if things went wrong
