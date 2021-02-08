@@ -36,9 +36,11 @@ def respond():
 
    else:
        try:
-           if command.startswith("/echo "):
+           # clear the message we got from any non alphabets
+           text = re.sub(r"\W", "_", text)
+           
+            if command.startswith("/echo "):
                text = text[5:]
-
        except Exception:
            # if things went wrong
            bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
