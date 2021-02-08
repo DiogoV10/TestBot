@@ -11,30 +11,13 @@ bot = telegram.Bot(token=TOKEN)
 
 app = Flask(__name__)
 
-def start(bot,update):
-    name  = update.message.from_user.first_name  #first name of the user messaging
-    reply = "Hi!! {}".format(name)
-    bot.send_message(chat_id = update.message.chat_id, text = reply)      #sending message
-
-def help(bot,update):
-    reply = "How can I help You"
-    bot.send_message(chat_id = update.message.chat_id, text = reply)  #sending message
-
-def echo_text(bot,update):
-    reply = update.message.text
-    bot.send_message(chat_id = update.message.chat_id, text = reply)
-
-def sticker(bot,update):
-    reply = update.message.sticker.file_id
-    bot.send_sticker(chat_id = update.message.chat_id, sticker = reply)
-
-def error(bot,update):
-    logger.error("Shit!! Update {} caused error {}".format(update,update.error))
 
 def main():
     updater = Updater(TOKEN)  #take the updates
     dp = updater.dispatcher   #handle the updates
 
+    chat_id = update.message.chat.id
+    msg_id = update.message.message_id
 
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
@@ -42,6 +25,7 @@ def main():
     dp.add_handler(MessageHandler(Filters.sticker, sticker))  #if the user sends sticker
     dp.add_error_handler(error)
     updater.start_polling()
+    logger.info("Started...")
     updater.idle()
 
 
@@ -59,4 +43,5 @@ def index():
 
 
 if __name__ == '__main__':
+   app.run(threaded=True)
    main()
