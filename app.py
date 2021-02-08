@@ -36,7 +36,7 @@ def respond():
 
    else:
        try:
-           if command.startswith("/echo"):
+           if command.startswith("/echo "):
                text = text[5:]
 
        except Exception:
