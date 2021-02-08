@@ -42,7 +42,7 @@ def respond():
            if text.startswith("/echo "):
                 user = text[6:]
                 bot.sendMessage(chat_id=chat_id, text=user) 
-                print(user)
+                print(text)
 
        except Exception:
            # if things went wrong
