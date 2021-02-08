@@ -38,7 +38,7 @@ def respond():
            text = re.sub(r"\W", "_", text)
            
            if text == "/eco":
-                eco()
+                echo()
 
        except Exception:
            # if things went wrong
