@@ -42,7 +42,6 @@ def main():
     dp.add_handler(MessageHandler(Filters.sticker, sticker))  #if the user sends sticker
     dp.add_error_handler(error)
     updater.start_polling()
-    logger.info("Started...")
     updater.idle()
 
 
