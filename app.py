@@ -38,8 +38,7 @@ def respond():
            text = re.sub(r"\W", "_", text)
            
            if text == "/echo":
-                dp.add_handler(MessageHandler(Filters.text, echo))
-                reply = echo
+                echo(text)
 
        except Exception:
            # if things went wrong
