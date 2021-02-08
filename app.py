@@ -35,7 +35,6 @@ def respond():
    else:
        try:
          
-           text = re.sub(r"\W", "_", text)
            
            if text == "/echo":
                 echo(text)
