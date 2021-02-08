@@ -2,7 +2,7 @@ import re
 from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
-import telebot
+
 
 global bot
 global TOKEN
@@ -11,28 +11,24 @@ bot = telegram.Bot(token=TOKEN)
 
 app = Flask(__name__)
 
-@app.route('/{}'.format(TOKEN), methods=['POST'])
 
-def respond():
-   # retrieve the message in JSON and then transform it to Telegram object
-   update = telegram.Update.de_json(request.get_json(force=True), bot)
 
-   chat_id = update.message.chat.id
-   msg_id = update.message.message_id
+def main():
+    updater = Updater(TOKEN)  #take the updates
+    dp = updater.dispatcher   #handle the updates
 
-   # Telegram understands UTF-8, so encode text for unicode compatibility
-   text = update.message.text.encode('utf-8').decode()
-   # for debugging purposes only
-   print("got text message :", text)
-   # the first time you chat with the bot AKA the welcoming message
-@bot.message_handler(commands=['start'])
-def handle_command(message):
-    bot.reply_to(message, "Hello, welcome to Telegram Bot!")
-    
-# handle all messages, echo response back to users
-@bot.message_handler(func=lambda message: True)
-def handle_all_message(message):
-	bot.sendMessage(chat_id=chat_id, text=text)
+    chat_id = update.message.chat.id
+    msg_id = update.message.message_id
+
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(MessageHandler(Filters.text, echo_text))   #if the user sends text
+    dp.add_handler(MessageHandler(Filters.sticker, sticker))  #if the user sends sticker
+    dp.add_error_handler(error)
+    updater.start_polling()
+    logger.info("Started...")
+    updater.idle()
+
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
@@ -48,4 +44,5 @@ def index():
 
 
 if __name__ == '__main__':
-   bot.polling()
+   app.run(threaded=True)
+   main()
