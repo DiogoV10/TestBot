@@ -39,7 +39,7 @@ def respond():
            # clear the message we got from any non alphabets
            text = re.sub(r"\W", "_", text)
 
-           if command.startswith("/echo "):
+           if text.startswith("/echo "):
                 text = text[6:]
                 bot.sendMessage(chat_id=chat_id, text=text) 
 
