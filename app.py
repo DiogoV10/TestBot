@@ -40,7 +40,7 @@ def respond():
            text = re.sub(r"\W", "_", text)
 
            if command.startswith("/echo "):
-                text = text[5:]
+                text = text[6:]
                 bot.sendMessage(chat_id=chat_id, text=text) 
 
        except Exception:
