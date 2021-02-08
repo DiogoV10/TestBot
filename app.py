@@ -32,7 +32,7 @@ def respond():
    # handle all messages, echo response back to users
    @bot.message_handler(func=lambda message: True)
    def handle_all_message(message):
-	    bot.reply_to(message, message.text)
+	    bot.sendMessage(chat_id=chat_id, text=text)
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
