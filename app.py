@@ -29,7 +29,7 @@ def respond():
 def handle_command(message):
     bot.reply_to(message, "Hello, welcome to Telegram Bot!")
     
-   # handle all messages, echo response back to users
+# handle all messages, echo response back to users
 @bot.message_handler(func=lambda message: True)
 def handle_all_message(message):
 	bot.sendMessage(chat_id=chat_id, text=text)
