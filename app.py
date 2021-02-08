@@ -38,7 +38,7 @@ def respond():
            
            if text == "/echo":
                 while text != "/stop":
-                bot.sendMessage(chat_id=chat_id, text=text)
+                    bot.sendMessage(chat_id=chat_id, text=text)
 
        except Exception:
            # if things went wrong
