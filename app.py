@@ -16,8 +16,8 @@ def main():
     updater = Updater(TOKEN)  #take the updates
     dp = updater.dispatcher   #handle the updates
 
-    chat_id = update.message.chat.id
-    msg_id = update.message.message_id
+    chat_id = updater.message.chat.id
+    msg_id = updater.message.message_id
 
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
