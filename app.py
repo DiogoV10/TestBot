@@ -31,13 +31,13 @@ def respond():
        No.
        """
        # send the welcoming message
-       bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
+       bot.sendMessage(chat_id=chat_id, text=bot_welcome)
 
 
    else:
        try:
            if text == "/echo":
-                bot.sendMessage(chat_id=chat_id, text="Do /echo [sample]")
+                bot.sendMessage(chat_id=chat_id, text="Do /echo [text]")
            elif text.startswith("/echo "):  
                 user = text[6:]
                 bot.sendMessage(chat_id=chat_id, text=user)
