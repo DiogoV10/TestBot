@@ -51,8 +51,8 @@ def respond():
 
                 bot.send_message(chat_id=chat_id, ‘Choose your greeting:', reply_markup=keyboard)
 
-                    if callback_data == 'get-bd':
-                        bot.sendMessage(chat_id=chat_id, text="Bom dia!") 
+                if callback_data == 'get-bd':
+                    bot.sendMessage(chat_id=chat_id, text="Bom dia!") 
 
            if text == "/commands":
                 bot.sendMessage(chat_id=chat_id, text="Commands: /echo; /greet; /help")
