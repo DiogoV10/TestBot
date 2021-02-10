@@ -44,12 +44,11 @@ def respond():
                 bot.sendMessage(chat_id=chat_id, text=user)
 
            if text == "/greet":
-                markup = InlineKeyboardMarkup()
                 InlineKeyboardButton(text='Bom dia', callback_data=1)
                 InlineKeyboardButton(text='Boa tarde', callback_data=2)
                 InlineKeyboardButton(text='Boa noite', callback_data=3)
 
-                bot.send_message(message.chat.id, text="Choose your greeting:", reply_markup=markup)
+                
 
                 
 
