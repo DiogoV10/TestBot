@@ -53,13 +53,8 @@ def respond():
 
            if text == "/help":
                 bot.send_message(chat_id=chat_id, text=
-                '1) To receive a list of available currencies press /exchange.\n' +
-                '2) Click on the currency you are interested in.\n' +
-                '3) You will receive a message containing information regarding the source and the target currencies, ' +
-                'buying rates and selling rates.\n' +
-                '4) Click “Update” to receive the current information regarding the request. ' +
-                'The bot will also show the difference between the previous and the current exchange rates.\n' +
-                '5) The bot supports inline. Type @<botusername> in any chat and the first letters of a currency.')
+                '1) To receive a list of commands write /commands.\n' +
+                '2) To see if the bot is active write /start.')
 
        except Exception:
            # if things went wrong
