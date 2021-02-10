@@ -49,7 +49,7 @@ def respond():
                 telebot.types.InlineKeyboardButton('Boa tarde', callback_data='get-bt'),
                 telebot.types.InlineKeyboardButton('Boa noite', callback_data='get-bn'))
 
-                bot.send_message(chat_id=chat_id, ‘Choose your greeting:', reply_markup=keyboard)
+                bot.send_message(chat_id=chat_id, text='Choose your greeting:', reply_markup=keyboard)
 
                 if callback_data == 'get-bd':
                     bot.sendMessage(chat_id=chat_id, text="Bom dia!") 
