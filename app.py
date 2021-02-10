@@ -51,13 +51,7 @@ def respond():
 
                 bot.send_message(chat_id=chat_id, text="Choose your greeting:", reply_markup=markup)
 
-                bot.answer_callback_query(callback_query_id=call.id, text='Answer accepted!')
-                answer = 'You made a mistake'
-                if call.data == '1':
-                    answer = 'Bom dia!'
-
-                bot.send_message(call.message.chat.id, answer)
-                bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
+                
 
            if text == "/commands":
                 bot.sendMessage(chat_id=chat_id, text="Commands: /echo; /greet; /help")
