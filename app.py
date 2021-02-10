@@ -56,8 +56,8 @@ def respond():
                 if call.data == '1':
                     answer = 'Bom dia!'
 
-                bot.send_message(call.message.chat.id, answer)
-                bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
+                bot.send_message(chat_id=chat_id, answer)
+                bot.edit_message_reply_markup(chat_id=chat_id, call.message.message_id)
 
            if text == "/commands":
                 bot.sendMessage(chat_id=chat_id, text="Commands: /echo; /greet; /help")
