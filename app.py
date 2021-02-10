@@ -36,10 +36,12 @@ def respond():
 
    else:
        try:
-           if text.startswith("/echo "):  
+           if text == "/echo":
+               bot.sendMessage(chat_id=chat_id, text="Do /echo [sample]")
+           elif text.startswith("/echo "):  
                 user = text[6:]
                 bot.sendMessage(chat_id=chat_id, text=user) 
-           elif text = "/":
+           elif text == "/":
 
 
            # clear the message we got from any non alphabets
