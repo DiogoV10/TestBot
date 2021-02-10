@@ -85,7 +85,7 @@ def respond():
                 "You have to always create your branch from 'DEVELOP' branch\n\n" +
                 "In https://sprints.zoho.com/ you can see your tasks\n" +
                 "The name of your branch is the Card ID inside zoho\n\n" +
-                "OBS: Your branch have to follow some guidelines\n\n" +
+                "OBS: Your branch has to follow some guidelines\n\n" +
                 "* If the card type is an issue or bug your branch has to be named as: issue/<card_id>\n" +
                 "* If the card type is a task or story your branch has to be named as: feature/<card_id>\n" +
                 "* remember that if your branch is a story, you can name it as the parent card id and make all the child tasks inside this branch")
