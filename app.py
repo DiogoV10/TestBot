@@ -44,9 +44,6 @@ def respond():
 
            if text == "/greet":
                 bot.sendMessage(chat_id=chat_id, text="Hello!")
-                
-
-                
 
            if text == "/commands":
                 bot.sendMessage(chat_id=chat_id, text="Commands: /echo; /greet; /help")
