@@ -43,13 +43,11 @@ def respond():
                 bot.sendMessage(chat_id=chat_id, text=user)
 
            if text == "/greet":
-                keyboard = telebot.types.InlineKeyboardMarkup()
-                keyboard.row(telebot.types.InlineKeyboardButton('Bom dia', callback_data='get-bd'))
-                keyboard.row(
-                telebot.types.InlineKeyboardButton('Boa tarde', callback_data='get-bt'),
-                telebot.types.InlineKeyboardButton('Boa noite', callback_data='get-bn'))
+                telebot.types.InlineKeyboardButton('Bom dia', callback_data='get-bd')
+                telebot.types.InlineKeyboardButton('Boa tarde', callback_data='get-bt')
+                telebot.types.InlineKeyboardButton('Boa noite', callback_data='get-bn')
 
-                bot.send_message(chat_id=chat_id, text='Choose your greeting:', reply_markup=keyboard)
+                bot.send_message(chat_id=chat_id, text='Choose your greeting:')
 
                 if callback_data == 'get-bd':
                     bot.sendMessage(chat_id=chat_id, text="Bom dia!") 
