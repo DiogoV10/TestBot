@@ -2,7 +2,6 @@ import re
 from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
-import telebot
 
 
 global bot
@@ -44,10 +43,7 @@ def respond():
                 bot.sendMessage(chat_id=chat_id, text=user)
 
            if text == "/greet":
-                InlineKeyboardButton(text='Bom dia', callback_data=1)
-                InlineKeyboardButton(text='Boa tarde', callback_data=2)
-                InlineKeyboardButton(text='Boa noite', callback_data=3)
-
+                bot.sendMessage(chat_id=chat_id, text="Hello!")
                 
 
                 
