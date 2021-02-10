@@ -49,7 +49,7 @@ def respond():
                 markup.add(telebot.types.InlineKeyboardButton(text='Boa tarde', callback_data=2))
                 markup.add(telebot.types.InlineKeyboardButton(text='Boa noite', callback_data=3))
 
-                bot.send_message(chat_id=chat_id, text="Choose your greeting:", reply_markup=markup)
+                bot.send_message(message.chat.id, text="Choose your greeting:", reply_markup=markup)
 
                 
 
