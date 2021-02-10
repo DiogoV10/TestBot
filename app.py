@@ -40,11 +40,14 @@ def respond():
                 bot.sendMessage(chat_id=chat_id, text="Do /echo [sample]")
            elif text.startswith("/echo "):  
                 user = text[6:]
-                bot.sendMessage(chat_id=chat_id, text=user) 
-           elif text == "/":
-                
+                bot.sendMessage(chat_id=chat_id, text=user)
 
-           
+
+           if text == "/commands":
+                bot.sendMessage(chat_id=chat_id, text="Commands: /echo; [in work]")
+
+           # clear the message we got from any non alphabets
+           text = re.sub(r"\W", "_", text)
 
        except Exception:
            # if things went wrong
